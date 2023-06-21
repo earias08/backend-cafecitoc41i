@@ -18,6 +18,10 @@ app.listen(app.get('PORT'), ()=>{
 app.use(express.json());//permite interpretar el formato json en un request
 app.use(express.urlencoded({ extended:true})); //permite interpretar string y arrays del request
 app.use(cors()); //permite conexiones remotas
-// app.use(morgan('dev')); //me da info extra en la terminal
+app.use(morgan('dev')); //me da info extra en la terminal
 
 //rutas
+//  http://localhost:4000/prueba
+app.get('/prueba', (req, res )=>{
+    res.send('Esta es una prueba de mi ruta GET')
+})
