@@ -3,6 +3,7 @@ import cors from 'cors'
 import * as dotenv from 'dotenv';
 import morgan from 'morgan';
 import path from 'path';
+import productosRouter from './src/routes/productos.routes';
 
 dotenv.config();
 //configurar un puerto
@@ -26,6 +27,9 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 //rutas
 //  http://localhost:4000/prueba
-app.get('/prueba', (req, res )=>{
-    res.send('Esta es una prueba de mi ruta GET')
-})
+// app.get('/prueba', (req, res )=>{
+//     res.send('Esta es una prueba de mi ruta GET')
+// })
+
+// http://localhost:4000/apicafe/prueba
+app.use('/apicafe', productosRouter)
