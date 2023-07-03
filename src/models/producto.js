@@ -18,6 +18,12 @@ const productoSchema = new Schema({
         type: String,
         required:true,
     },
+    descripcion:{
+        type: String,
+        required:true,
+        minLength: 2,
+        maxLength: 300
+    },
     categoria:{
         type: String,
         required:true,
