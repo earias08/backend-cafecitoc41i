@@ -14,8 +14,19 @@ export const crearProducto = async (req, res) => {
 
    } catch (error) {
     console.log(error);
-    res.status(404).json({
-        mensaje: 'Error al intentar crear un producto' 
-    })
+   
    }
+  }
+
+  export const obtenerListaProductos = async (req, res)=>{
+    try{
+        //buscar en la BD la collection de productos
+        const productos = await Producto.find();
+        res.status(200).json(productos);
+    }catch(error){
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'Error al intentar obtener los productos' 
+        })
+    }
   }
