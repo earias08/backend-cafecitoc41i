@@ -18,7 +18,17 @@ router
     [
       check("nombreProducto")
         .notEmpty()
-        .withMessage("El nombre del producto es obligatorio"),
+        .withMessage("El nombre del producto es obligatorio")
+        .isLength({ min: 2, max: 100 })
+        .withMessage(
+          "El nombre del producto debe contener entre 2 y 100 caracteres"
+        ),
+      check("precio")
+        .notEmpty()
+        .withMessage("El precio es obligatorio")
+        .isNumeric()
+        .withMessage("El precio debe ser un valor numerico")
+        .custom(()=> {})
     ],
     crearProducto
   )
