@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import path from 'path';
 import './src/database/dbConnection';
 import productosRouter from './src/routes/productos.routes';
+import usuarioRouter from './src/routes/usuarios.routes';
 
 dotenv.config();
 //configurar un puerto
@@ -34,3 +35,4 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // http://localhost:4000/apicafe/prueba
 app.use('/apicafe', productosRouter)
+app.use('/apicafe/auth',usuarioRouter)
