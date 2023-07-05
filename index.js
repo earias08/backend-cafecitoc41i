@@ -34,5 +34,5 @@ app.use(express.static(path.join(__dirname, '/public')));
 // })
 
 // http://localhost:4000/apicafe/prueba
-app.use('/apicafe', productosRouter)
-app.use('/apicafe/auth',usuarioRouter)
+app.use('/apicafe', productosRouter);
+app.use('/apicafe/auth',usuarioRouter);

@@ -19,7 +19,7 @@ export const crearUsuario = async (req, res) => {
     await usuario.save();
     res.status(201).json({
       mensaje: "usuario creado",
-      nombre: usuario.nombre,
+      nombre: usuario.nombreUsuario,
       uid: usuario._id,
     });
   } catch (error) {
