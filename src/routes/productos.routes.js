@@ -28,7 +28,13 @@ router
         .withMessage("El precio es obligatorio")
         .isNumeric()
         .withMessage("El precio debe ser un valor numerico")
-        .custom(()=> {})
+        .custom((value)=> {
+          if(value >=1 && value <=10000){
+            return true
+          }else{
+            throw new Error('El precio debe estar entre 1 y 10000')
+          }
+        })
     ],
     crearProducto
   )
