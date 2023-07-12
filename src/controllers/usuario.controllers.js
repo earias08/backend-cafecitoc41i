@@ -65,6 +65,7 @@ export const login = async (req, res)=>{
     //verificar si las contraseñas coinciden
     const passwordValido = bcrypt.compareSync(password, usuario.password); // devuelve un valor booleano, true si los password coinciden
     //preguntar si la variable es invalida
+    console.log(passwordValido)
     if(!passwordValido){
       return res.status(404).json({
         mensaje: 'Correo o password invalido - password'
